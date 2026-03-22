@@ -17,6 +17,10 @@
   flex-shrink: 0;
 }
 
+.menu__logo {
+  margin-top: 40px;
+}
+
 .menu__nav-group {
   display: flex;
   flex-direction: column;
@@ -36,11 +40,6 @@
   transition: transform 0.2s ease;
 }
 
-
-.menu__logo{
-    margin-top: 40px;
-}
-
 .menu__item:hover {
   transform: scale(1.18);
 }
@@ -53,13 +52,9 @@
 .menu__item.active {
   background: transparent;
   outline: none;
-
 }
 
-/* Inactive icons appear dimmed */
 .menu__item img {
-  /* width: 28px;
-  height: 28px; */
   max-width: 28px;
   max-height: 28px;
   display: block;
@@ -72,8 +67,6 @@
   filter: none;
   width: 22px;
   height: 22px;
-  /* max-width: 28px;
-  max-height: 28px; */
 }
 
 .menu__item img.image {
@@ -85,7 +78,7 @@
 }
 
 /* ============================================================
-   PAGE SHELL (shared layout wrapper)
+   PAGE SHELL
 ============================================================ */
 body:has(.page-shell) {
   background: var(--page-bg);
@@ -93,8 +86,6 @@ body:has(.page-shell) {
 
 .page-shell {
   width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
   display: flex;
   align-items: flex-start;
   height: 100vh;
@@ -103,9 +94,6 @@ body:has(.page-shell) {
 
 .page-main {
   flex: 1;
-  width: 100%;
-  max-width: 1368px;
-  margin: 0 auto;
   min-width: 0;
   height: 100vh;
   background: var(--page-bg);
@@ -115,18 +103,18 @@ body:has(.page-shell) {
 }
 
 /* ============================================================
-   USER BADGE — fixed top-right, shown on all client pages
+   USER BADGE — fixed top-right
 ============================================================ */
 .user-badge {
   position: fixed;
   top: 18px;
-  right: max(24px, calc(50vw - 660px));
+  right: 24px;
   z-index: 1000;
   display: flex;
   align-items: center;
   gap: 10px;
   background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(8px);
   padding: 6px 14px 6px 8px;
   border-radius: 40px;
@@ -143,14 +131,14 @@ body:has(.page-shell) {
   display: none;
   position: fixed;
   top: 68px;
-  right: max(24px, calc(50vw - 660px));
+  right: 24px;
   z-index: 1001;
   background: #161618;
-  border: 1px solid rgba(255,255,255,0.07);
+  border: 1px solid rgba(255, 255, 255, 0.07);
   border-radius: 16px;
   min-width: 230px;
   overflow: hidden;
-  box-shadow: 0 12px 40px rgba(0,0,0,0.75), 0 0 0 1px rgba(255,255,255,0.04);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.75), 0 0 0 1px rgba(255, 255, 255, 0.04);
   transform: translateY(-8px) scale(0.96);
   opacity: 0;
   transition: opacity 0.22s ease, transform 0.22s ease;
@@ -170,7 +158,7 @@ body:has(.page-shell) {
   to   { opacity: 1; transform: translateY(0) scale(1); }
 }
 
-/* ── header ── */
+/* ── Dropdown header ── */
 .ubd-header {
   display: flex;
   align-items: center;
@@ -184,7 +172,7 @@ body:has(.page-shell) {
   border-radius: 50%;
   object-fit: cover;
   flex-shrink: 0;
-  border: 2px solid rgba(255,255,255,0.1);
+  border: 2px solid rgba(255, 255, 255, 0.1);
 }
 
 .ubd-avatar--placeholder {
@@ -212,20 +200,20 @@ body:has(.page-shell) {
 .ubd-email {
   font-family: 'Raleway', sans-serif;
   font-size: 11px;
-  color: rgba(255,255,255,0.38);
+  color: rgba(255, 255, 255, 0.38);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-/* ── divider ── */
+/* ── Divider ── */
 .ubd-divider {
   height: 1px;
-  background: rgba(255,255,255,0.06);
+  background: rgba(255, 255, 255, 0.06);
   margin: 0 14px;
 }
 
-/* ── logout button ── */
+/* ── Logout button ── */
 .ubd-logout-btn {
   width: 100%;
   display: flex;

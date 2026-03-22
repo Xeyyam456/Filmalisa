@@ -1,8 +1,10 @@
-/* ─────────── Toast Styles ─────────── */
+/* ============================================================
+   TOAST STYLES
+============================================================ */
 .toast-container {
   position: fixed;
   top: 20px;
-  right: max(20px, calc((100vw - 1440px) / 2 + 20px));
+  right: 20px;
   z-index: 9999;
   max-width: 400px;
   display: flex;
@@ -40,10 +42,7 @@
 }
 
 .modern-toast.warning .toast-title,
-.modern-toast.warning .toast-msg {
-  color: #333;
-}
-
+.modern-toast.warning .toast-msg,
 .modern-toast.warning .toast-close {
   color: #333;
 }
@@ -96,11 +95,26 @@
 }
 
 @keyframes slideIn {
-  from { transform: translateX(400px); opacity: 0; }
+  from { transform: translateX(420px); opacity: 0; }
   to   { transform: translateX(0);     opacity: 1; }
 }
 
 @keyframes progress {
   from { width: 100%; }
-  to   { width: 0%;   }
+  to   { width: 0%; }
+}
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+  .toast-container {
+    right: 12px;
+    left: 12px;
+    max-width: 100%;
+  }
+
+  .modern-toast {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+  }
 }

@@ -19,8 +19,6 @@ body {
 /* ...existing code... */
 .detailContainer {
   width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
   height: 100vh;
   font-family: var(--font-primary);
   font-feature-settings: "lnum" 1;

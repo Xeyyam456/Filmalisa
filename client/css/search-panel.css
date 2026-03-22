@@ -14,6 +14,9 @@ body {
   background: var(--page-bg);
 }
 
+/* ============================================================
+   SEARCH HEADER
+============================================================ */
 .search-header {
   display: flex;
   align-items: center;
@@ -37,7 +40,6 @@ body {
   border-radius: 4px;
   padding: 8px 12px;
   width: 268px;
-  /* margin-left: auto; */
   margin-right: 22px;
   background: rgba(0, 0, 0, 0.2);
 }
@@ -61,35 +63,39 @@ body {
   font-size: 12px;
 }
 
+/* ============================================================
+   RESULTS GRID
+============================================================ */
 .results-grid {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
-  /* align-items: flex-start; */
-  gap:14px;
-  overflow: visible;
-  padding-bottom: 0;
+  column-gap: 10px;
+  row-gap: 48px;
 }
 
-.action-card {
-  flex: 0 0 calc(25% - 12px);
-  width: calc(25% - 12px);
+.results-grid .action-card {
+  flex: 0 0 286px;
+  width: 286px;
   height: 440px;
   position: relative;
   overflow: hidden;
-  background: transparent;
+  background: #1a1a1a;
+  border-radius: 6px;
   cursor: pointer;
   margin-right: 0;
 }
 
-.action-card img {
+.results-grid .action-card img {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
 
-.action-card::before {
+.results-grid .action-card::before {
   content: '';
   position: absolute;
   inset: 0;
@@ -97,7 +103,7 @@ body {
   z-index: 1;
 }
 
-.action-card::after {
+.results-grid .action-card::after {
   content: '';
   position: absolute;
   inset: 0;
@@ -108,10 +114,48 @@ body {
   pointer-events: none;
 }
 
-.action-card:hover::after {
+.results-grid .action-card:hover::after {
   opacity: 1;
 }
 
+.results-grid .action-card .category-name {
+  position: absolute;
+  left: 10px;
+  bottom: 72px;
+  font-size: 11px;
+  padding: 3px 8px;
+  z-index: 3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: calc(100% - 20px);
+}
+
+.results-grid .action-card .card-imdb {
+  position: absolute;
+  left: 6px;
+  bottom: 40px;
+  padding: 0 4px;
+  z-index: 3;
+  margin-bottom: 0;
+}
+
+.results-grid .action-card .movie-name {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  font-size: 16px;
+  line-height: 1.3;
+  z-index: 3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: calc(100% - 20px);
+}
+
+/* ============================================================
+   CARD SHARED ELEMENTS
+============================================================ */
 .category-name {
   position: absolute;
   left: 14px;
@@ -139,6 +183,7 @@ body {
   font-weight: 500;
 }
 
+/* ── Play button ── */
 .card-play-btn {
   position: absolute;
   top: 50%;
@@ -167,6 +212,7 @@ body {
   transform: translate(-50%, -50%) scale(1);
 }
 
+/* ── Favourite button ── */
 @keyframes fav-pop {
   0%   { transform: scale(1); }
   40%  { transform: scale(1.38); }
@@ -217,73 +263,11 @@ body {
   animation: fav-pop 0.35s ease forwards;
 }
 
-/* ── Results grid ── */
-.results-grid {
-  display: flex;
-  flex-wrap: wrap;
-  column-gap: 10px;
-  row-gap: 48px;
-}
-
-.results-grid .action-card {
-  flex: 0 0 286px;
-  width: 286px;
-  height: 440px;
-  position: relative;
-  overflow: hidden;
-  background: #1a1a1a;
-  border-radius: 6px;
-}
-
-.results-grid .action-card img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.results-grid .action-card .category-name {
-  position: absolute;
-  left: 10px;
-  bottom: 72px;
-  font-size: 11px;
-  padding: 3px 8px;
-  z-index: 3;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: calc(100% - 20px);
-}
-
-.results-grid .action-card .card-imdb {
-  position: absolute;
-  left: 6px;
-  bottom: 40px;
-  padding: 0 4px;
-  z-index: 3;
-  margin-bottom: 0;
-}
-
-.results-grid .action-card .movie-name {
-  position: absolute;
-  left: 10px;
-  bottom: 10px;
-  font-size: 16px;
-  line-height: 1.3;
-  z-index: 3;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: calc(100% - 20px);
-}
-
+/* ── Empty state ── */
 .search__empty {
   margin-top: 60px;
   text-align: center;
-  color: rgba(255,255,255,0.45);
+  color: rgba(255, 255, 255, 0.45);
   font-size: 16px;
   letter-spacing: 0.04em;
 }

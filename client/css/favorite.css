@@ -20,22 +20,59 @@ body {
   background: var(--page-bg);
 }
 
-/* ── Favorites grid ── */
+/* ============================================================
+   PAGE HEADER
+============================================================ */
+.page-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.page-subtitle {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* ============================================================
+   SECTION
+============================================================ */
+.section {
+  padding: 24px 18px 0 0;
+}
+
+.section__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.section__title {
+  font-size: 34px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  text-indent: 10px;
+}
+
+/* ============================================================
+   FAVORITES GRID
+============================================================ */
 .favorites__grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
+  
+  gap: 42px 42px;
   margin-top: 20px;
 }
 
-/* action-card override: flex → grid child */
 .favorites__grid .action-card {
-  flex: 0 0 calc(25% - 12px);
-  width: calc(25% - 12px);
+  flex: 0 0 292px;
+  width: 292px;
   height: 440px;
   position: relative;
   overflow: hidden;
-  background: #1a1a1a;
+  background: #111;
   border-radius: 6px;
   cursor: pointer;
   margin-right: 0;
@@ -48,7 +85,6 @@ body {
   display: block;
 }
 
-/* category & title - no overlap */
 .favorites__grid .action-card .category-name {
   position: absolute;
   left: 10px;
@@ -87,45 +123,14 @@ body {
 .favorites__empty {
   margin-top: 60px;
   text-align: center;
-  color: rgba(255,255,255,0.45);
+  color: rgba(255, 255, 255, 0.45);
   font-size: 16px;
   letter-spacing: 0.04em;
 }
 
-.page-title {
-  font-size: 28px;
-  font-weight: 700;
-  margin-bottom: 8px;
-}
-
-.page-subtitle {
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.5);
-}
-
-
-
-.section {
-  padding: 24px 18px 0 0;
-}
-
-.section__header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 40px;
-}
-
-.section__title {
-  font-size: 34px;
-  font-weight: 600;
-  letter-spacing: 0.2px;
-  text-indent: 10px;
-}
-
-/* WRAPPERS: horizontal scroll */
-
-
+/* ============================================================
+   COMEDY WRAPPER
+============================================================ */
 .comedy__wrapper {
   display: flex;
   gap: 14px;
@@ -135,15 +140,13 @@ body {
   scroll-snap-type: x mandatory;
 }
 
-/* hide scrollbar from view */
-.action__wrapper::-webkit-scrollbar,
 .comedy__wrapper::-webkit-scrollbar {
   height: 0;
 }
 
-
-
-/* ===== COMEDY CARD (SEPARATE) ===== */
+/* ============================================================
+   COMEDY CARD
+============================================================ */
 .comedy-card {
   flex: 0 0 auto;
   width: 504px;
@@ -172,67 +175,50 @@ body {
 
 .comedy-card img {
   width: 100%;
-  height: 100%; /* increase this if you want Comedy images to grow */
+  height: 100%;
   object-fit: cover;
   display: block;
 }
+
+/* ============================================================
+   CARD LABELS
+============================================================ */
 .category-name {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 4px 8px;
-  font-size: 14px;
-  font-weight: 400;
+  font-size: 13px;
+  font-weight: 500;
   color: rgb(15, 239, 253);
-  background: rgba(29, 29, 29, 0.5);
-
+  background: rgba(0, 0, 0, 0.6);
   border-top-right-radius: 8px;
   border-bottom-left-radius: 8px;
-
+  padding: 6px 10px;
   width: fit-content;
   position: absolute;
   left: 14px;
   bottom: 60px;
   z-index: 3;
-
-  padding: 6px 10px;
-  font-size: 13px;
-  font-weight: 500;
-
-  color: rgb(15, 239, 253);
-  background: rgba(0, 0, 0, 0.6);
-
-  border-top-right-radius: 8px;
-  border-bottom-left-radius: 8px;
-
-  width: fit-content;
-  /* hug kimi */
 }
 
 .movie-name {
   color: #fff;
   font-size: 24px;
   line-height: 40px;
-  font-weight: 500;
+  font-weight: 600;
   margin: 0;
   position: absolute;
   left: 14px;
   bottom: 20px;
   z-index: 3;
-  color: #fff;
-  font-weight: 600;
 }
-.action-card {
-  overflow: hidden;
-}
-/* category yeri */
+
 .action-card .category-name,
 .comedy-card .category-name {
   left: 14px;
   bottom: 72px;
 }
 
-/* imdb yeri */
 .action-card .card-imdb,
 .comedy-card .card-imdb {
   position: absolute;
@@ -243,13 +229,15 @@ body {
   margin-bottom: 0;
 }
 
-/* movie name yeri */
 .action-card .movie-name,
 .comedy-card .movie-name {
   left: 14px;
   bottom: 14px;
 }
 
+/* ============================================================
+   CARD PLAY BUTTON
+============================================================ */
 .card-play-btn {
   position: absolute;
   top: 50%;
@@ -278,6 +266,9 @@ body {
   transform: translate(-50%, -50%) scale(1);
 }
 
+/* ============================================================
+   CARD FAVOURITE BUTTON
+============================================================ */
 .card-fav-btn {
   position: absolute;
   top: 14px;
@@ -305,3 +296,4 @@ body {
   color: #ef4444;
   background: rgba(20, 20, 20, 0.82);
 }
+

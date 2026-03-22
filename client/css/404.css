@@ -1,3 +1,6 @@
+/* ============================================================
+   404 NOT FOUND PAGE
+============================================================ */
 html,
 body {
   margin: 0;
@@ -58,7 +61,6 @@ body {
   color: #fff;
   font-size: 15px;
   font-weight: 600;
-  
   background-color: var(--primary-color);
   transition: transform 0.2s ease, filter 0.2s ease;
 }
