@@ -5,9 +5,9 @@
 ============================================================ */
 
 /* ── Grid həmişə mərkəzə — wrap olduqda kartlar ortada qalır ── */
-.results-grid {
+/* .results-grid {
   justify-content: center;
-}
+} */
 
 /* ── TABLET (≤1024px) ── */
 @media (max-width: 1024px) {
