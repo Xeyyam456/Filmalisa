@@ -1,0 +1,605 @@
+/* ============================================================
+   Aside / sidebar CSS → client/css/aside.css
+============================================================ */
+
+/* ============================================================
+   PAGE SHELL  →  .page-shell  and  .page-main  are in aside.css
+============================================================ */
+body {
+  background: var(--page-bg);
+  color: #fff;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* ============================================================
+   HERO SECTION
+============================================================ */
+#section1 {
+  width: 100%;
+  box-sizing: border-box;
+  padding-right: 18px; /* same alignment as section padding */
+}
+
+.hero-carousel {
+  position: relative;
+  /* padding-top: 100px; */
+  width: 100%;
+  height: 640px;
+  overflow: hidden;
+}
+
+/* single slide */
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: transform 0.65s ease, opacity 0.65s ease;
+}
+
+.hero-slide.is-active,
+.hero-slide.active {
+  opacity: 1;
+  transform: translateX(0);
+  z-index: 1;
+}
+
+.hero-slide.is-prev {
+  opacity: 0;
+  transform: translateX(-100%);
+  z-index: 0;
+}
+
+/* prevent right side of hero image from being clipped */
+.hero-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right center;
+  display: block;
+}
+
+/* left-to-right dark gradient for text readability */
+.hero-slide::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.88) 0%,
+    rgba(0, 0, 0, 0.55) 42%,
+    rgba(0, 0, 0, 0.1)  65%,
+    rgba(0, 0, 0, 0)    80%
+  );
+  pointer-events: none;
+}
+
+/* ---- hero text content ---- */
+.hero-content {
+  position: absolute;
+  left: clamp(80px, 9vw, 140px);
+  bottom: 90px;
+  z-index: 3;
+  max-width: 520px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.hero-genre {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 22px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+  color: #04d9ff;
+  background: rgba(17, 17, 17, 0.56);
+  border: none;
+  border-radius: 4px;
+  padding: 0 10px;
+  width: fit-content;
+  backdrop-filter: blur(1px);
+   border-top-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.hero-stars {
+  line-height: 1;
+}
+
+.hero-stars .card-imdb {
+  position: static;
+  padding: 0;
+  gap: 5px;
+}
+
+.hero-stars .card-imdb i {
+  font-size: 18px;
+}
+
+.hero-stars .card-imdb__score {
+  font-size: 17px;
+  font-weight: 700;
+  margin-left: 6px;
+}
+
+.hero-title {
+  font-size: 46px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #fff;
+  margin: 0;
+}
+
+.hero-desc {
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ---- watch now button with gradient border ---- */
+.watch-btn {
+  position: relative;
+  display: inline-block;
+  padding: 13px 44px;
+  border: none;
+  border-radius: 50px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  background: transparent;
+  cursor: pointer;
+  width: fit-content;
+  z-index: 0;
+  transition: background 0.2s;
+}
+
+.watch-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50px;
+  padding: 1.5px;
+  background: linear-gradient(90deg, #c850c0, #4158d0, #0ff);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.watch-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* ---- user avatar ---- */
+.hero-avatar {
+  position: absolute;
+  top: 50%;
+  right: 80px;
+  transform: translateY(-50%);
+  z-index: 4;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #e05a2b;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 0 0 2px rgba(255,255,255,0.2);
+}
+
+
+
+.hero-dots button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  padding: 0;
+  transition: 0.3s;
+}
+
+
+
+/* ---- next arrow ---- */
+.hero-next-btn {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 4;
+  width: 36px;
+  height: 64px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 28px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.hero-next-btn:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+/* ============================================================
+   CATEGORIES CONTAINER — unified left alignment for all sections
+============================================================ */
+.categories-container {
+  padding-right: 55px;
+  overflow-x: hidden;
+}
+
+/* ============================================================
+   SECTION HEADERS (Action / Comedy)
+============================================================ */
+.section {
+  padding: 24px 18px 0 0;
+}
+
+.section__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  
+}
+
+.section__title {
+  font-size: 34px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  margin-left: 40px;
+}
+
+.section__chevron i {
+  font-size: 16px;
+  position: relative;
+  top: -2px;
+}
+
+/* WRAPPERS: horizontal scroll */
+.scroll-row {
+  position: relative;
+  overflow: visible;
+}
+
+/* Edge fade — left */
+.scroll-row::before,
+.scroll-row::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  z-index: 5;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.scroll-row::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(18,18,18,0.9), transparent);
+}
+.scroll-row::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(18,18,18,0.9), transparent);
+}
+.scroll-row.has-overflow-left::before  { opacity: 1; }
+.scroll-row.has-overflow-right::after  { opacity: 1; }
+
+.scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255,255,255,0.18);
+  background: rgba(15, 15, 15, 0.82);
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s, background 0.2s, transform 0.18s, border-color 0.2s;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.45);
+}
+
+.scroll-btn:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255,255,255,0.4);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.scroll-btn--prev {
+  left: 18px;
+  transform: translateX(0) translateY(-50%);
+}
+.scroll-btn--prev:hover {
+  transform: translateX(0) translateY(-50%) scale(1.1);
+}
+.scroll-btn--next {
+  right: 18px;
+}
+
+.action__wrapper {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 10px;
+}
+
+.comedy__wrapper {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+/* hide scrollbar from view */
+.action__wrapper::-webkit-scrollbar,
+.comedy__wrapper::-webkit-scrollbar {
+  height: 0;
+}
+
+.action__wrapper > :first-child,
+.comedy__wrapper > :first-child {
+  margin-left: 0;
+}
+
+/* ===== ACTION CARD (SEPARATE) ===== */
+.action-card {
+  flex: 0 0 auto;
+  width: 292px;
+  min-width: 292px;
+  margin-right: 42px;
+  height: 440px;
+  position: relative;
+  overflow: hidden;
+  background: #111;
+  border-radius: 6px;
+  scroll-snap-align: start;
+  cursor: pointer;
+}
+
+
+.action-card:nth-last-child(1) {
+  margin-right: 0;
+}
+
+
+.action-card::after,
+.comedy-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.action-card:hover::after,
+.comedy-card:hover::after {
+  opacity: 1;
+}
+
+.action-card img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-position: center;
+  display: block;
+}
+
+/* ===== COMEDY CARD (SEPARATE) ===== */
+.comedy-card {
+  flex: 0 0 auto;
+  width: 504px;
+  min-width: 504px;
+  margin-right: 34px;
+  height: 736px;
+  overflow: hidden;
+  position: relative;
+  background: transparent;
+  scroll-snap-align: start;
+  cursor: pointer;
+}
+
+.comedy-card img {
+  width: 100%;
+  height: 100%; /* increase this if you want Comedy images to grow */
+  object-fit: cover;
+  display: block;
+}
+.category-name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 8px;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgb(15, 239, 253);
+  background: rgba(29, 29, 29, 0.5);
+
+  border-top-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+
+  width: fit-content;
+  position: absolute;
+  left: 14px;
+  bottom: 60px;
+  z-index: 3;
+
+  padding: 6px 10px;
+  font-size: 13px;
+  font-weight: 500;
+
+  color: rgb(15, 239, 253);
+  background: rgba(0, 0, 0, 0.6);
+
+  border-top-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+
+  width: fit-content;
+  /* hug kimi */
+}
+
+.movie-name {
+  color: #fff;
+  font-size: 24px;
+  line-height: 40px;
+  font-weight: 500;
+  margin: 0;
+  position: absolute;
+  left: 14px;
+  bottom: 20px;
+  z-index: 3;
+  color: #fff;
+  font-weight: 600;
+}
+/* overflow + border-radius already set on .action-card above */
+/* category yeri */
+.action-card .category-name,
+.comedy-card .category-name {
+  left: 16px;
+  bottom: 72px;
+  font-size: 11px;
+  padding: 3px 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: calc(100% - 32px);
+}
+
+/* imdb stars yeri */
+.action-card .card-imdb,
+.comedy-card .card-imdb {
+  position: absolute;
+  left: 16px;
+  bottom: 40px;
+  padding: 0;
+  z-index: 3;
+  margin-bottom: 0;
+}
+
+/* movie name yeri */
+.action-card .movie-name,
+.comedy-card .movie-name {
+  left: 16px;
+  bottom: 10px;
+  font-size: 16px;
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: calc(100% - 32px);
+}
+
+.card-play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.92);
+  width: 72px;
+  height: 72px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(8, 8, 8, 0.75);
+  color: #fff;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  opacity: 0;
+  pointer-events: none;
+  cursor: pointer;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.action-card:hover .card-play-btn,
+.comedy-card:hover .card-play-btn {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+@keyframes fav-pop {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.38); }
+  70%  { transform: scale(0.88); }
+  100% { transform: scale(1); }
+}
+
+.card-fav-btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 42px;
+  height: 42px;
+  border: 1.5px solid rgba(255, 255, 255, 0.22);
+  border-radius: 50%;
+  background: rgba(10, 10, 10, 0.52);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: rgba(255, 255, 255, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  z-index: 6;
+  cursor: pointer;
+  transition: border-color 0.25s ease, background 0.25s ease,
+              color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card-fav-btn:hover {
+  border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(30, 30, 30, 0.72);
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.07);
+}
+
+.card-fav-btn.is-favorite {
+  color: #ff4060;
+  border-color: rgba(255, 64, 96, 0.65);
+  background: rgba(255, 64, 96, 0.18);
+  box-shadow: 0 0 14px rgba(255, 64, 96, 0.4);
+}
+
+.card-fav-btn.is-favorite i {
+  animation: fav-pop 0.35s ease forwards;
+}

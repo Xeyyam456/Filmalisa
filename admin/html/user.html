@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User</title>
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="../../assets/images/admin.logo.svg"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- CSS ler -->
+    <link rel="stylesheet" href="../../global.css" />
+    <link rel="stylesheet" href="../css/toast.css" />
+    <link rel="stylesheet" href="../css/loading.css" />
+    <link rel="stylesheet" href="../css/user.css" />
+  </head>
+
+  <body>
+    <!-- ── Page Loader ── -->
+    <div id="page-loader">
+      <div class="loader-wrapper">
+        <div class="loader-ring-1"></div>
+        <div class="loader-ring-2"></div>
+        <div class="loader-ring-3"></div>
+        <div class="loader-dot"></div>
+      </div>
+      <p class="loader-label">Loading</p>
+      <div class="loader-dots"><span></span><span></span><span></span></div>
+    </div>
+    <div class="user-container">
+      <aside class="asideContainer">
+        <div class="upperAside">
+          <div class="logoArea">
+            <img src="../../assets/images/filmalisalogo.png" alt="" />
+            <p class="aside-text">filmalisa</p>
+          </div>
+
+          <!-- SIDEBAR (DIV -> A) -->
+          <a href="./dashboard.html" class="sideBar-item dashBoardItem">
+            <img src="../../assets/images/dashboard.svg" alt="" />
+            <span class="sideBar-text">Dashboard</span>
+          </a>
+
+          <a href="./movies.html" class="sideBar-item movieItem">
+            <img src="../../assets/images/Group.svg" alt="" />
+            <span class="sideBar-text">Movies</span>
+          </a>
+
+          <a href="./categories.html" class="sideBar-item categoriesItem">
+            <img src="../../assets/images/star.svg" alt="" />
+            <span class="sideBar-text">Categories</span>
+          </a>
+
+          <a href="./user.html" class="sideBar-item usersItem active">
+            <img src="../../assets/images/user.svg" alt="" />
+            <span class="sideBar-text">Users</span>
+          </a>
+
+          <a href="./comment.html" class="sideBar-item commentsItem">
+            <img src="../../assets/images/comment.svg" alt="" />
+            <span class="sideBar-text">Comments</span>
+          </a>
+
+          <a href="./contactUs.html" class="sideBar-item contactItem">
+            <img src="../../assets/images/faq.svg" alt="" />
+            <span class="sideBar-text">Contact</span>
+          </a>
+
+          <a href="./actors.html" class="sideBar-item actorItem">
+            <img src="../../assets/images/user.svg" alt="" />
+            <span class="sideBar-text">Actors</span>
+          </a>
+        </div>
+
+        <div class="lowerAside" id="logoutBtn" style="cursor:pointer;">
+          <img src="../../assets/images/logout.svg" alt="" />
+          <p class="logout-text">Logout</p>
+        </div>
+      </aside>
+
+      <main>
+        <header class="header">
+          <div class="leftHeaderSection">
+            <p class="admin-text">Hi Admin</p>
+            <p class="page-text">User</p>
+          </div>
+
+          <div class="rightHeaderSection">
+            <div class="rightSection">
+              <img src="../../assets/images/adminman.svg" alt="user-image" />
+              <p class="profileName">Admin</p>
+            </div>
+          </div>
+        </header>
+
+        <section class="section">
+          <table class="table">
+            <thead class="table-dark">
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Fullname</th>
+                <th scope="col">Email</th>
+                <th scope="col">Image</th>
+                <th scope="col">Operation</th>
+              </tr>
+            </thead>
+            <tbody id="usersTableBody">
+              <!-- <tr class="table-row">
+                            <th scope="row">1</th>
+
+
+
+                            <td>Xeyyam Elizade</td>
+
+                            <td>Xeyyamelizade5@gmail.com</td>
+
+                            <td>
+                                <img src="../../assets/images/adminman.svg" alt="user-image">
+                            </td>
+
+
+
+
+                        </tr> -->
+            </tbody>
+          </table>
+        </section>
+
+        <!-- user detail modal -->
+        <dialog id="userDetailModal" class="userModal">
+          <div class="modalBox">
+            <div class="modal-header">
+              <h2>User Details</h2>
+              <button type="button" class="close-modal" onclick="userDetailModal.close()">×</button>
+            </div>
+            <div class="user-detail-body">
+              <img id="userDetailImg" src="" alt="user" class="user-detail-photo" />
+              <div class="user-detail-meta">
+                <p><i class="fa-solid fa-user"></i> <span id="userDetailName"></span></p>
+                <p><i class="fa-solid fa-envelope"></i> <span id="userDetailEmail"></span></p>
+              </div>
+            </div>
+          </div>
+        </dialog>
+      </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Load API as ES6 module -->
+    <!-- Auth guard: redirect to login if no token -->
+    <script src="../js/utils/adminAuthGuard.js"></script>
+
+    <script type="module" src="../js/pages/users/index.js"></script>
+  </body>
+</html>

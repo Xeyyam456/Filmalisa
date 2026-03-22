@@ -1,0 +1,468 @@
+/* ── DESKTOP LARGE (≤1440px) ── */
+@media (max-width: 1440px) {
+  .watchBtn {
+    font-size: 18px;
+    height: 40px;
+    padding: 8px 24px;
+  }
+  .addMyListBtn {
+    width: 48px;
+    height: 48px;
+    font-size: 28px;
+  }
+}
+
+/* ── DESKTOP (≤1200px) ── */
+@media (max-width: 1200px) {
+  .watchBtn {
+    font-size: 16px;
+    height: 32px;
+    padding: 6px 18px;
+  }
+  .addMyListBtn {
+    width: 44px;
+    height: 44px;
+    font-size: 26px;
+  }
+}
+
+/* ── TABLET (≤1024px) ── */
+@media (max-width: 1024px) {
+  .watchBtn {
+    font-size: 15px;
+    height: 28px;
+    padding: 4px 12px;
+  }
+  .addMyListBtn {
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+  }
+}
+
+/* ── MOBILE LANDSCAPE (≤768px) ── */
+@media (max-width: 768px) {
+  .watchBtn {
+    font-size: 14px;
+    height: 24px;
+    padding: 3px 8px;
+  }
+  .addMyListBtn {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+}
+
+/* ── MOBILE (≤520px) ── */
+@media (max-width: 520px) {
+  .watchBtn {
+    font-size: 12px;
+    height: 20px;
+    padding: 2px 6px;
+  }
+  .addMyListBtn {
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+  }
+}
+/* ============================================================
+   DETAIL — RESPONSIVE
+   min-width: 480px (digər səhifələrlə eyni)
+   Breakpoints: 1200px, 1024px, 768px, 580px
+============================================================ */
+
+/* ── LARGE (≤1200px) ── */
+@media (max-width: 1200px) {
+  .movieImgSection {
+    height: 500px;
+  }
+
+  .movieInfoHeader {
+    width: 580px;
+    left: 52px;
+  }
+
+  .movieDetailSection {
+    gap: 40px;
+    padding-top: 100px;
+  }
+
+  .detail-img-wrapper {
+    width: 420px;
+  }
+
+  .detailMovieImg {
+    height: 560px;
+  }
+
+  .detail-description {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  .similar-movie-section {
+    width: auto;
+  }
+}
+
+/* ── TABLET (≤1024px) ── */
+@media (max-width: 1024px) {
+  .detailContainer {
+    overflow-x: hidden;
+  }
+
+  .detail-main-content {
+    min-width: 480px;
+  }
+
+  .movieImgSection {
+    height: 420px;
+  }
+
+  .movieInfo {
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-bottom: 60px;
+  }
+
+  .movieInfoHeader {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    padding: 24px;
+    margin-bottom: 0;
+    border-radius: 16px;
+  }
+
+  .movieName {
+    font-size: 26px;
+    line-height: 34px;
+  }
+
+  /* Stack poster + info vertically */
+  .movieDetailSection {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 32px;
+    gap: 28px;
+  }
+
+  /* Poster şəklini 1024px-dən aşağıda gizlət */
+  .detail-img-wrapper {
+    display: none;
+  }
+
+  .detailMovieImg {
+    height: 480px;
+    border-radius: 16px;
+  }
+
+  .detail-right-section {
+    width: 100%;
+    min-width: unset;
+    padding-top: 0;
+  }
+
+  .detail-header-left-h1 {
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  .detail-description {
+    width: 100%;
+    font-size: 16px;
+    line-height: 26px;
+  }
+
+  .aboutMovie {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px 24px;
+  }
+
+  .similar-movie-section {
+    width: auto;
+    margin-left: -32px;
+    margin-right: -32px;
+    padding-left: 32px;
+  }
+
+  .commentBar {
+    width: 100%;
+  }
+
+  .comment-title {
+    width: 80%;
+  }
+}
+
+/* ── MOBILE LANDSCAPE (≤768px) ── */
+@media (max-width: 768px) {
+  .detail-main-content {
+    min-width: 480px;
+    padding-bottom: 80px; /* bottom nav */
+  }
+
+  .movieImgSection {
+    height: 320px;
+  }
+
+  .movieImg {
+    object-position: top center;
+  }
+
+  /* Cover-dən aşağı hissə — 10px padding */
+  .movieInfo {
+    padding: 20px 10px 48px;
+  }
+
+  /* Poster şəklini gizlət */
+  .detail-img-wrapper {
+    display: none;
+  }
+
+  .movieInfoHeader {
+    padding: 18px 20px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-radius: 12px;
+  }
+
+  .movieTitle {
+    font-size: 14px;
+  }
+
+  .movieName {
+    font-size: 22px;
+    line-height: 30px;
+  }
+
+  .movieDetailSection {
+    padding-top: 24px;
+    gap: 20px;
+  }
+
+  .detail-img-wrapper {
+    max-width: 280px;
+  }
+
+  .detailMovieImg {
+    height: 380px;
+    border-radius: 12px;
+  }
+
+  .detail-rigth-section-header {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .detail-header-left {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .detail-header-left-h1 {
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  .watchBtn {
+    font-size: 14px;
+    height: 28px;
+    width: auto;
+    padding: 4px 12px;
+  }
+
+  .addMyListBtn {
+    width: 42px;
+    height: 42px;
+    font-size: 24px;
+  }
+
+  .detail-description {
+    font-size: 14px;
+    line-height: 22px;
+    margin-top: 8px;
+  }
+
+  .detail-rating {
+    height: 30px;
+    font-size: 13px;
+    padding: 4px 10px;
+    margin-top: 10px;
+  }
+
+  .aboutMovie {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px 16px;
+    margin-top: 14px;
+  }
+
+  .aboutMovie-item .data-span {
+    font-size: 13px;
+  }
+
+  .data-text {
+    font-size: 15px;
+  }
+
+  .genres-text,
+  .actors-text {
+    font-size: 14px;
+    margin-top: 14px;
+  }
+
+  .genres-name {
+    font-size: 15px;
+    line-height: 24px;
+  }
+
+  .actor-card img {
+    width: 100px;
+    height: 126px;
+    border-radius: 10px;
+  }
+
+  .actor-name {
+    font-size: 12px;
+  }
+
+  .actor-role {
+    font-size: 11px;
+  }
+
+  .section-title {
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+
+  .similar-movie-section {
+    margin-left: -20px;
+    margin-right: -20px;
+    padding: 28px 0 28px 20px;
+  }
+
+  .commentBar {
+    width: 100%;
+    gap: 10px;
+  }
+
+  .commentInput {
+    height: 52px;
+    font-size: 14px;
+  }
+
+  .commentBtn {
+    padding: 12px 20px;
+  }
+
+  .commentBtn img {
+    width: 22px;
+    height: 26px;
+  }
+
+  .comment-title {
+    width: 100%;
+  }
+
+  .emoji-picker-panel {
+    width: 280px;
+  }
+
+  .emoji-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+/* ── MOBILE (≤580px) ── */
+@media (max-width: 580px) {
+  .detail-main-content {
+    min-width: 480px;
+    padding-bottom: 72px;
+  }
+
+  .movieImgSection {
+    height: 260px;
+  }
+
+  .movieInfo {
+    padding: 16px 10px 40px;
+  }
+
+  .movieInfoHeader {
+    padding: 14px 16px;
+    border-radius: 10px;
+  }
+
+  .movieName {
+    font-size: 18px;
+    line-height: 26px;
+    margin-top: 6px;
+  }
+
+  .movieDetailSection {
+    padding-top: 18px;
+    gap: 16px;
+  }
+
+  .detail-img-wrapper {
+    max-width: 240px;
+  }
+
+  .detailMovieImg {
+    height: 320px;
+    border-radius: 10px;
+  }
+
+  .detail-header-left-h1 {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .detail-description {
+    font-size: 13px;
+    line-height: 20px;
+  }
+
+  .aboutMovie {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px 12px;
+  }
+
+  .data-text {
+    font-size: 13px;
+  }
+
+  .aboutMovie-item .data-span {
+    font-size: 12px;
+  }
+
+  .similar-movie-section {
+    margin-left: -16px;
+    margin-right: -16px;
+    padding: 24px 0 24px 16px;
+  }
+
+  .section-title {
+    font-size: 18px;
+  }
+
+  .commentBar {
+    gap: 8px;
+  }
+
+  .commentInput {
+    height: 46px;
+    font-size: 13px;
+    padding: 10px 44px 10px 12px;
+  }
+
+  .emoji-picker-panel {
+    width: 240px;
+    height: 220px;
+  }
+}

@@ -1,0 +1,442 @@
+@import url("https://fonts.googleapis.com/css2?family=Numans&family=Poppins:wght@400;600&family=Raleway:wght@300;400;500;600;700&display=swap");
+
+:root {
+  --font-primary: "Raleway", sans-serif;
+  --font-numeric: "Poppins", sans-serif;
+  --admin-shell-max-width: 1440px;
+
+
+  --primary-color: #9b51e0;
+  --border-color: #808080;
+  --input-border-color: #323b54;
+
+  --bg-color: rgba(23, 22, 22, 1);
+  --detail-page-bg: rgba(29, 29, 29, 1);
+  --sidebar-bg: rgba(30, 30, 30, 1);
+  --input-bg-color: #323b54;
+
+  --sidebar-text-color: #aeaeae;
+  --header-name-color: #cccccc;
+  --landing-page-logo-color: #c3c8d4;
+  --input-text-color: #bcbcbc;
+  --card-number-color: #ffffff;
+  --text-placeholder: #475069;
+
+  --card-bg: rgba(45, 45, 45, 1);
+  --card-bg-purple: rgba(101, 47, 141, 1);
+  --sidebar-card-color: rgba(88, 32, 157, 1);
+
+  /* Base dark page background */
+  --page-bg: #121212;
+
+  --base: 8px; /* Define your base spacing unit */
+}
+
+.mt-5 {
+  margin-top: var(--base) * 5; /* Use CSS calc() with custom properties */
+}
+
+html {
+  background: var(--page-bg);
+}
+
+body {
+  font-family: var(--font-primary);
+  width: 100%;
+  /* max-width: 1440px; */
+  /* margin: 0 auto; */
+  box-sizing: border-box;
+}
+
+/* Client pages: keep content inside 1440px (no side background image) */
+body:has(.landingPage),
+body:has(.page-shell),
+body:has(.detailContainer),
+body:has(.not-found) {
+  background: #000000;
+}
+
+.landingPage,
+.page-shell,
+.detailContainer,
+.not-found {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  background: #000000;
+}
+
+/* Auth pages: match form background color */
+.login-page,
+.register-page {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  background: var(--bg-color);
+}
+
+/* Admin pages */
+.dashBoardContainer,
+.actors-container,
+.categories-container,
+.movies-container,
+.commentContainer,
+.contact-us-container,
+.user-container {
+  width: 100%;
+  min-height: 100vh;
+}
+
+
+
+/* aside */
+
+.logoArea {
+  display: flex;
+  align-items: center;
+  margin-top: 14px;
+  margin-bottom: 40px;
+  gap: 12px;
+  height: 55px;
+  padding-left: 40px;
+  box-sizing: border-box;
+}
+
+.aside-text {
+  color: rgba(195, 200, 212, 1);
+  font-size: 20px;
+}
+
+.sideBar-text {
+  color: white;
+  font-size: 14px;
+  line-height: 13px;
+}
+
+a {
+  color: var(--sidebar-text-color);
+  text-decoration: none;
+}
+
+.sideBar-item {
+  width: 100%;
+  padding-left: 30px;
+  display: flex;
+  height: 50px;
+  margin-top: 5px;
+  border-radius: 8px;
+  padding-left: 25px;
+  color: var(--sidebar-text-color);
+  cursor: pointer;
+  transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+.sideBar-item img {
+  transition: filter 0.35s ease;
+  margin-left: 7px;
+}
+
+.sideBar-text {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1;
+  color: inherit;
+}
+
+.sideBar-item:hover {
+  background-color: var(--sidebar-card-color);
+}
+
+/* .sideBar-item:hover img {
+    filter: brightness(0) invert(1);
+} */
+
+.lowerAside {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 55px;
+  padding-left: 40px;
+  padding-right: 16px;
+  border-radius: 8px;
+  background-color: transparent;
+  color: var(--sidebar-text-color);
+  cursor: pointer;
+  transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+.logout-text {
+  margin: 0;
+  font-size: 14px;
+  color: inherit;
+}
+
+.lowerAside img {
+  width: 18px;
+  height: 18px;
+  transition: filter 0.35s ease;
+  color: var(--sidebar-text-color);
+}
+
+.lowerAside:hover {
+  background-color: var(--sidebar-card-color);
+  color: var(--card-number-color);
+}
+
+p {
+  margin: 0;
+}
+
+.asideContainer {
+  background-color: var(--sidebar-bg);
+  width: 250px;
+  flex-shrink: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sideBar-item {
+  width: 100%;
+  height: 50px;
+  padding-left: 40px;
+  padding-right: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-radius: 8px;
+  color: var(--sidebar-text-color);
+  cursor: pointer;
+  transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+/*  Aside end */
+
+/* header */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 40px 70px 24px;
+  /* position: fixed; */
+
+  width: 100%;
+  background-color: var(--bg-color);
+}
+
+.rightHeaderSection {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.rightSection {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.admin-text {
+  font-size: 13px;
+  color: var(--header-name-color);
+  line-height: 100%;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.page-text {
+  font-size: 20px;
+  color: var(--card-number-color);
+  font-weight: 500;
+  line-height: 100%;
+}
+
+.create-btn {
+  font-size: 14px;
+  line-height: 100%;
+  font-weight: 500;
+  color: var(--card-number-color);
+  background-color: var(--primary-color);
+  padding: 12px 24px;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  margin-right: 28px;
+  cursor: pointer;
+}
+
+.create-btn:hover {
+  background-color: var(--card-bg-purple);
+}
+
+.rightHeaderSection img {
+  width: 31px;
+  height: 31px;
+  border-radius: 50%;
+  display: block;
+}
+
+.profileName {
+  margin: 0;
+  color: rgba(255, 255, 255, 1);
+  font-size: 12px;
+  line-height: 13px;
+  font-weight: 500;
+}
+
+/* header end */
+
+.active {
+  background-color: var(--sidebar-card-color);
+  color: var(--card-number-color);
+}
+
+.sideBar-item.active img {
+  filter: brightness(0) invert(1);
+}
+
+/* ── Shared Pagination ─────────────────────────────────────────────────────── */
+.pagination-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 16px 24px;
+  margin-top: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+}
+
+.pg-info {
+  color: #aaa;
+  font-size: 13px;
+  font-family: var(--font-numeric);
+  font-weight: 400;
+}
+
+.pg-info strong {
+  color: #fff;
+}
+
+.pg-controls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.pg-btn {
+  padding: 6px 12px;
+  background: #2a2a3e;
+  color: #ccc;
+  border: 1px solid #3a3a52;
+  border-radius: 6px;
+  font-size: 13px;
+  font-family: var(--font-numeric);
+  font-weight: 400;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  min-width: 36px;
+}
+
+.pg-btn:hover:not(:disabled) {
+  background: #6c5ce7;
+  color: #fff;
+  border-color: #6c5ce7;
+}
+
+.pg-btn.pg-active {
+  background: #6c5ce7;
+  color: #fff;
+  border-color: #6c5ce7;
+  font-weight: 600;
+  cursor: default;
+}
+
+.pg-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.pg-ellipsis {
+  color: #555;
+  padding: 0 4px;
+  font-size: 14px;
+}
+
+/* ── Operation column eye icon ── */
+.op-eye-btn {
+  cursor: pointer;
+  color: #a78bfa;
+  font-size: 15px;
+  margin-right: 10px;
+  transition: color 0.2s, transform 0.2s;
+}
+.op-eye-btn:hover {
+  color: #c4b5fd;
+  transform: scale(1.25);
+}
+
+/* ── Operation column icon colors ── */
+.op-view {
+  cursor: pointer;
+  color: #3b82f6;
+  font-size: 15px;
+  margin-right: 10px;
+  transition: color 0.2s, transform 0.2s;
+}
+.op-view:hover  { color: #60a5fa; transform: scale(1.25); }
+
+.op-edit {
+  cursor: pointer;
+  color: #22c55e;
+  font-size: 15px;
+  margin-right: 10px;
+  transition: color 0.2s, transform 0.2s;
+}
+.op-edit:hover  { color: #4ade80; transform: scale(1.25); }
+
+.op-delete {
+  cursor: pointer;
+  color: #ef4444;
+  font-size: 15px;
+  transition: color 0.2s, transform 0.2s;
+}
+.op-delete:hover { color: #f87171; transform: scale(1.25); }
+/* ── Hide scrollbars (scroll still works) ── */
+main {
+  scrollbar-width: none;       /* Firefox */
+  -ms-overflow-style: none;    /* IE / Edge legacy */
+}
+
+main::-webkit-scrollbar {
+  display: none;               /* Chrome / Safari / Webkit */
+}
+
+/* ── Card IMDB rating stars ─────────────────────────────────────────── */
+.card-imdb {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 10px;
+  margin-bottom: 2px;
+}
+
+.card-imdb i {
+  font-size: 13px;
+  color: #fbbf24;
+}
+
+.card-imdb__score {
+  font-size: 13px;
+  font-weight: 700;
+  color: #fbbf24;
+  font-family: 'Poppins', sans-serif;
+  margin-left: 5px;
+  letter-spacing: 0.3px;
+}
+
+
+

@@ -1,0 +1,52 @@
+/* ============================================================
+   404 — RESPONSIVE
+   (Already mostly responsive, minor tweaks below)
+============================================================ */
+html, body {
+  min-width: 520px;
+}
+
+@media (max-width: 768px) {
+  .not-found__title {
+    font-size: 44px;
+  }
+
+  .not-found__card img {
+    width: min(100%, 360px);
+    margin-bottom: 20px;
+  }
+
+  .not-found__text {
+    font-size: 15px;
+    max-width: 380px;
+  }
+}
+
+@media (max-width: 480px) {
+  .not-found__title {
+    font-size: 34px;
+  }
+
+  .not-found__text {
+    font-size: 14px;
+    max-width: 300px;
+  }
+
+  .not-found__btn {
+    min-width: 110px;
+    height: 42px;
+    font-size: 14px;
+    border-radius: 10px;
+    margin-top: 24px;
+  }
+
+  .not-found__card img {
+    width: min(100%, 280px);
+  }
+}
+
+@media (max-width: 360px) {
+  .not-found__title {
+    font-size: 28px;
+  }
+}

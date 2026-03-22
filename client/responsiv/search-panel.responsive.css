@@ -1,0 +1,137 @@
+/* ============================================================
+   SEARCH PANEL — RESPONSIVE
+   Page min-width: 480px
+   Cards: mərkəzə gəlir hər wrap olduqda
+============================================================ */
+
+/* ── Grid həmişə mərkəzə — wrap olduqda kartlar ortada qalır ── */
+.results-grid {
+  justify-content: center;
+}
+
+/* ── TABLET (≤1024px) ── */
+@media (max-width: 1024px) {
+  .page-main {
+    padding: 60px 18px 24px;
+    min-width: 480px;
+  }
+
+  .page-title {
+    font-size: 28px;
+    text-indent: 32px;
+  }
+
+  .results-grid .action-card {
+    flex: 0 0 240px;
+    width: 240px;
+    height: 380px;
+  }
+
+  .search-bar {
+    width: 220px;
+    margin-right: 12px;
+  }
+}
+
+/* ── MOBILE LANDSCAPE (≤768px) ── */
+@media (max-width: 768px) {
+  .page-main {
+    padding: 24px 16px 80px;
+    min-width: 480px;
+  }
+
+  .search-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .page-title {
+    font-size: 24px;
+    text-indent: 0;
+  }
+
+  .search-bar {
+    width: 100%;
+    margin-right: 0;
+    box-sizing: border-box;
+  }
+
+  /* 2 columns — mərkəzə */
+  .results-grid {
+    column-gap: 12px;
+    row-gap: 32px;
+  }
+
+  .results-grid .action-card {
+    flex: 0 0 calc(50% - 6px);
+    width: calc(50% - 6px);
+    height: 360px;
+  }
+
+  .results-grid .action-card .movie-name {
+    font-size: 14px;
+    bottom: 8px;
+  }
+}
+
+/* ── MOBILE (≤580px) ── */
+@media (max-width: 580px) {
+  .page-main {
+    padding: 16px 10px 72px;
+    min-width: 480px;
+  }
+
+  .page-title {
+    font-size: 20px;
+  }
+
+  .results-grid {
+    column-gap: 10px;
+    row-gap: 24px;
+  }
+
+  .results-grid .action-card {
+    flex: 0 0 calc(50% - 5px);
+    width: calc(50% - 5px);
+    height: 300px;
+    border-radius: 8px;
+  }
+
+  .results-grid .action-card .category-name {
+    font-size: 10px;
+    padding: 2px 6px;
+    bottom: 60px;
+  }
+
+  .results-grid .action-card .movie-name {
+    font-size: 12px;
+    bottom: 6px;
+    left: 8px;
+  }
+
+  .results-grid .action-card .card-imdb {
+    left: 4px;
+    bottom: 36px;
+  }
+
+  .card-fav-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 12px;
+    top: 8px;
+    right: 8px;
+  }
+
+  .card-play-btn {
+    width: 48px;
+    height: 48px;
+    font-size: 18px;
+  }
+
+  .search__empty {
+    font-size: 14px;
+    margin-top: 40px;
+  }
+}

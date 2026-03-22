@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="shortcut icon" href="/assets/images/admin.logo.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+
+    <link rel="stylesheet" href="../css/detail.css">
+    <link rel="stylesheet" href="../css/aside.css">
+    <link rel="stylesheet" href="../../global.css">
+    <link rel="stylesheet" href="../css/toast.css">
+    <link rel="stylesheet" href="../../admin/css/loading.css">
+    <link rel="stylesheet" href="../responsiv/aside.responsive.css">
+    <link rel="stylesheet" href="../responsiv/detail.responsive.css">
+
+
+</head>
+
+<body>
+    <!-- Page Loader -->
+    <div id="page-loader">
+      <div class="loader-wrapper">
+        <div class="loader-ring-1"></div>
+        <div class="loader-ring-2"></div>
+        <div class="loader-ring-3"></div>
+        <div class="loader-dot"></div>
+      </div>
+      <p class="loader-label">Loading</p>
+      <div class="loader-dots"><span></span><span></span><span></span></div>
+    </div>
+
+    <div class="detailContainer">
+        <nav class="menu">
+            <a class="menu__item menu__logo" href="./home.html">
+                <img src="../../assets/images/icon1..svg" class="image" alt="Logo" />
+            </a>
+
+            <div class="menu__nav-group">
+                <a class="menu__item" href="./home.html">
+                    <img src="../../assets/images/home.icon2.svg" alt="Home" />
+                </a>
+
+                <a class="menu__item" href="./search-panel.html">
+                    <img src="../../assets/images/home.icon3.svg" alt="Search" />
+                </a>
+                <a class="menu__item" href="./account.html">
+                    <img src="../../assets/images/home.icon4.svg" alt="Account" />
+                </a>
+                <a class="menu__item " href="./favorite.html">
+                    <img src="../../assets/images/home.icon5.svg" alt="Favorites" />
+                </a>
+            </div>
+        </nav>
+
+        <main class="detail-main-content">
+            <section class="movieImgSection">
+                <img src="" alt="movie banner" class="movieImg" id="detailBannerImg" />
+            </section>
+
+            <div class="movieInfo">
+                <div class="movieInfoHeader">
+                    <p class="movieTitle"><span class="movieTitleSpan" id="movieCategoryName"></span></p>
+                    <h3 class="movieName" id="movieName"></h3>
+                </div>
+
+                <div class="movieDetailSection">
+
+                    <div class="detail-img-wrapper">
+                        <img src="" alt="movie poster" class="detailMovieImg" id="detailMoviePoster" />
+                        <button class="detail-play-btn" id="detailPlayBtn" aria-label="Play trailer">
+                            <i class="fa-solid fa-play"></i>
+                        </button>
+                    </div>
+                    <div class="detail-right-section">
+                        <div class="detail-rigth-section-header">
+                            <div class="detail-header-left">
+                                <h1 class="detail-header-left-h1" id="detailMovieTitle"></h1>
+                                <button class="watchBtn" id="watchBtn">Watch Link</button>
+                            </div>
+                            <button class="addMyListBtn" id="addMyListBtn">+</button>
+                        </div>
+                        <p class="detail-description" id="detailOverview"></p>
+                        <p class="detail-rating" id="detailRating"><i class="fa-solid fa-star"></i> —</p>
+                        <div class="aboutMovie" id="aboutMovie">
+                            <div class="aboutMovie-item">
+                                <span class="data-span">Category</span>
+                                <p class="data-text" id="aboutCategory">—</p>
+                            </div>
+                            <div class="aboutMovie-item">
+                                <span class="data-span">Runtime</span>
+                                <p class="data-text" id="aboutRuntime">—</p>
+                            </div>
+                            <div class="aboutMovie-item">
+                                <span class="data-span">Adult</span>
+                                <p class="data-text" id="aboutAdult">—</p>
+                            </div>
+                            <div class="aboutMovie-item">
+                                <span class="data-span">IMDB</span>
+                                <div id="aboutImdb">—</div>
+                            </div>
+                            <div class="aboutMovie-item">
+                                <span class="data-span">Year</span>
+                                <p class="data-text" id="aboutYear">—</p>
+                            </div>
+                        </div>
+                        <p class="genres-text">Genres</p>
+                        <p class="genres-name" id="genresName"></p>
+                        <div class="actors-section">
+                            <p class="actors-text">Top Cast</p>
+                            <div class="actors-list" id="actorsList"></div>
+                        </div>
+                    </div>
+                </div>
+                <section class="comment-section">
+                    <div class="commentBar">
+                        <div class="commentInput-wrap">
+                            <input type="text" id="commentInput" class="commentInput" placeholder="Add a comment..." />
+                            <button type="button" id="emojiPickerBtn" class="emoji-picker-btn" title="Emoji">&#128512;</button>
+                            <div id="emojiPickerPanel" class="emoji-picker-panel" hidden>
+                                <div class="emoji-grid" id="emojiGrid"></div>
+                            </div>
+                        </div>
+                        <button class="commentBtn" id="commentBtn"><img src="../../assets/images/send.svg" alt="send"></button>
+                    </div>
+                    <div id="commentsList"></div>
+
+                <section class="similar-movie-section">
+                    <h3 class="section-title">similar movies <span class="section__chevron"><i class="fa-solid fa-chevron-right"></i></span></h3>
+
+                    <div class="similar-scroll-row">
+                        <button class="scroll-btn scroll-btn--prev similar-scroll-btn--prev" aria-label="Previous"><i class="fa-solid fa-chevron-left"></i></button>
+                        <div class="swiper similarSwiper">
+                            <div class="swiper-wrapper" id="similarSwiperWrapper">
+                            </div>
+                        </div>
+                        <button class="scroll-btn scroll-btn--next similar-scroll-btn--next" aria-label="Next"><i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade playModal" id="playModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content playModal__content">
+
+                <button type="button" class="playModal__close">✕</button>
+
+                <!-- pre-play screen: poster backdrop + title + play button -->
+                <div class="playModal__prescreen">
+                    <img class="playModal__poster" src="" alt="" />
+                    <div class="playModal__shade"></div>
+                    <div class="playModal__meta">
+                        <h2 class="playModal__title"></h2>
+                        <button class="playModal__playbtn" aria-label="Play">
+                            <i class="fa-solid fa-play"></i>
+                            <span>Play</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- video screen — hidden until play is pressed -->
+                <div class="playModal__hero playModal__hero--hidden">
+                    <iframe class="playModal__iframe" title="Trailer" src=""
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen
+                        allowtransparency="true"
+                        frameborder="0"
+                        mozallowfullscreen="true"
+                        msallowfullscreen="true"
+                        oallowfullscreen="true"
+                        webkitallowfullscreen="true">
+                    </iframe>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="../js/pages/detail.js"></script>
+
+
+</body>
+
+</html>

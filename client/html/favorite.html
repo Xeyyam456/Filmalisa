@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="az">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Favorites</title>
+    <link rel="shortcut icon" href="/assets/images/admin.logo.svg" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Shared aside styles -->
+    <link rel="stylesheet" href="../css/aside.css" />
+    <link rel="stylesheet" href="../css/home.css" />
+    <link rel="stylesheet" href="../css/favorite.css" />
+    <link rel="stylesheet" href="../../global.css" />
+    <link rel="stylesheet" href="../css/toast.css" />
+    <link rel="stylesheet" href="../../admin/css/loading.css" />
+    <link rel="stylesheet" href="../responsiv/aside.responsive.css" />
+    <link rel="stylesheet" href="../responsiv/favorite.responsive.css" />
+  </head>
+  <body>
+
+    <!-- Page Loader -->
+    <div id="page-loader">
+      <div class="loader-wrapper">
+        <div class="loader-ring-1"></div>
+        <div class="loader-ring-2"></div>
+        <div class="loader-ring-3"></div>
+        <div class="loader-dot"></div>
+      </div>
+      <p class="loader-label">Loading</p>
+      <div class="loader-dots"><span></span><span></span><span></span></div>
+    </div>
+
+    <div class="page-shell">
+
+      <!-- ============================================================
+           ASIDE — Left navigation panel
+      ============================================================ -->
+      <nav class="menu">
+        <a class="menu__item menu__logo" href="./home.html">
+          <img src="../../assets/images/icon1..svg" class="image" alt="Logo" />
+        </a>
+
+        <div class="menu__nav-group">
+          <a class="menu__item" href="./home.html">
+            <img src="../../assets/images/home.icon2.svg" alt="Home" />
+          </a>
+
+          <a class="menu__item" href="./search-panel.html">
+            <img src="../../assets/images/home.icon3.svg" alt="Search" />
+          </a>
+          <a class="menu__item" href="./account.html">
+            <img src="../../assets/images/home.icon4.svg" alt="Account" />
+          </a>
+          <a class="menu__item active" href="./favorite.html">
+            <img src="../../assets/images/favorite-icon-active.svg" alt="Favorites" />
+          </a>
+
+
+        </div>
+      </nav>
+      <!-- /ASIDE -->
+
+      <!-- ============================================================
+           MAIN CONTENT — Favorite movies page
+      ============================================================ -->
+      <main class="page-main">
+        <section class="section section--favorites">
+          <div class="section__header">
+            <h2 class="section__title">
+              Favorite movies <span class="section__chevron">&gt;</span>
+            </h2>
+          </div>
+          <div class="favorites__grid" id="favoritesGrid"></div>
+          <p class="favorites__empty" id="favoritesEmpty" style="display:none;">You have no favorite movies yet.</p>
+        </section>
+      </main>
+      <!-- /MAIN CONTENT -->
+
+
+
+
+
+    </div>
+    <script type="module" src="../js/pages/favorite.js"></script>
+  </body>
+</html>

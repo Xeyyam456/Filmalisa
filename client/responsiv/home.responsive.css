@@ -1,0 +1,249 @@
+/* ============================================================
+   HOME — RESPONSIVE
+   Breakpoints: 1200px, 1024px, 768px, 480px
+============================================================ */
+html, body {
+  min-width: 520px;
+}
+
+/* ── LARGE DESKTOP (≤1200px) ── */
+@media (max-width: 1200px) {
+  .hero-carousel {
+    height: 560px;
+  }
+
+  .hero-title {
+    font-size: 38px;
+  }
+
+  .hero-content {
+    left: clamp(60px, 6vw, 100px);
+    max-width: 440px;
+  }
+
+  .comedy-card {
+    width: 420px;
+    min-width: 420px;
+    height: 620px;
+  }
+
+  .action-card {
+    width: 260px;
+    min-width: 260px;
+    margin-right: 32px;
+  }
+
+  .section__title {
+    font-size: 28px;
+  }
+}
+
+/* ── TABLET (≤1024px) ── */
+@media (max-width: 1024px) {
+  .hero-carousel {
+    height: 480px;
+  }
+
+  .hero-title {
+    font-size: 32px;
+  }
+
+  .hero-desc {
+    font-size: 13px;
+  }
+
+  .hero-content {
+    left: 48px;
+    bottom: 70px;
+    max-width: 380px;
+    gap: 14px;
+  }
+
+  .watch-btn {
+    padding: 11px 32px;
+    font-size: 14px;
+  }
+
+  .categories-container {
+    padding-right: 32px;
+  }
+
+  .comedy-card {
+    width: 360px;
+    min-width: 360px;
+    height: 540px;
+    margin-right: 24px;
+  }
+
+  .action-card {
+    width: 230px;
+    min-width: 230px;
+    height: 380px;
+    margin-right: 24px;
+  }
+
+  .section {
+    padding: 20px 12px 0 0;
+  }
+
+  .section__title {
+    font-size: 24px;
+    margin-left: 24px;
+  }
+}
+
+/* ── MOBILE LANDSCAPE (≤768px) ── */
+@media (max-width: 768px) {
+  /* Bottom nav bar takes 64px, so push content up */
+  .categories-container {
+    padding-right: 16px;
+    padding-bottom: 80px; /* space for bottom nav */
+  }
+
+  #section1 {
+    padding-right: 0;
+  }
+
+  .hero-carousel {
+    height: 420px;
+  }
+
+  .hero-content {
+    left: 24px;
+    bottom: 56px;
+    max-width: 320px;
+    gap: 12px;
+  }
+
+  .hero-title {
+    font-size: 26px;
+    line-height: 1.2;
+  }
+
+  .hero-desc {
+    font-size: 12px;
+    line-height: 1.55;
+    /* hide on small screens to avoid overflow */
+    display: none;
+  }
+
+  .hero-genre {
+    font-size: 12px;
+    height: 20px;
+  }
+
+  .watch-btn {
+    padding: 10px 24px;
+    font-size: 13px;
+  }
+
+  .hero-next-btn {
+    width: 30px;
+    height: 52px;
+    font-size: 20px;
+  }
+
+  .section__title {
+    font-size: 20px;
+    margin-left: 16px;
+  }
+
+  .action-card {
+    width: 200px;
+    min-width: 200px;
+    height: 320px;
+    margin-right: 16px;
+  }
+
+  .comedy-card {
+    width: 300px;
+    min-width: 300px;
+    height: 460px;
+    margin-right: 16px;
+  }
+
+  .card-fav-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+    top: 10px;
+    right: 10px;
+  }
+
+  .card-play-btn {
+    width: 56px;
+    height: 56px;
+    font-size: 20px;
+  }
+
+  .scroll-btn {
+    width: 34px;
+    height: 34px;
+    font-size: 13px;
+  }
+}
+
+/* ── MOBILE (≤480px) ── */
+@media (max-width: 480px) {
+  .hero-carousel {
+    height: 360px;
+  }
+
+  .hero-content {
+    left: 16px;
+    bottom: 44px;
+    max-width: 260px;
+    gap: 10px;
+  }
+
+  .hero-title {
+    font-size: 22px;
+  }
+
+  .hero-stars .card-imdb__score {
+    font-size: 14px;
+  }
+
+  .watch-btn {
+    padding: 9px 20px;
+    font-size: 12px;
+  }
+
+  .section__title {
+    font-size: 18px;
+    margin-left: 12px;
+  }
+
+  .section {
+    padding: 16px 8px 0 0;
+  }
+
+  .action-card {
+    width: 170px;
+    min-width: 170px;
+    height: 280px;
+    margin-right: 12px;
+  }
+
+  .action-card .movie-name,
+  .comedy-card .movie-name {
+    font-size: 13px;
+  }
+
+  .action-card .category-name,
+  .comedy-card .category-name {
+    font-size: 10px;
+    padding: 2px 6px;
+  }
+
+  .comedy-card {
+    width: 260px;
+    min-width: 260px;
+    height: 400px;
+    margin-right: 12px;
+  }
+
+  .categories-container {
+    padding-bottom: 72px;
+  }
+}

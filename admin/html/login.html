@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="az">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="icon" type="image/svg+xml" href="../../assets/images/admin.logo.svg" />
+    <link rel="stylesheet" href="../../global.css" />
+    <link rel="stylesheet" href="../css/login.css" />
+    <link rel="stylesheet" href="../css/toast.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+
+    
+    <div class="login-page">
+      <div class="login-box">
+        <!-- Logo -->
+        <div class="login-logo">
+          <img src="../../assets/images/admin.logo.svg" alt="Logo" />
+        </div>
+
+        <!-- Title -->
+        <h1 class="login-title">Admin</h1>
+
+        <!-- Form -->
+        <form class="login-form">
+          <!-- Username -->
+          <div class="form-group">
+            <span class="input-icon">
+              <img
+                src="../../assets/images/admin.username.svg"
+                alt="username icon"
+              />
+            </span>
+            <input type="text" id="email" placeholder="username" required />
+          </div>
+
+          <!-- Password -->
+          <div class="form-group">
+            <span class="input-icon">
+              <img
+                src="../../assets/images/admin.password.svg"
+                alt="password icon"
+              />
+            </span>
+
+            <input
+              type="password"
+              placeholder="password"
+              id="password"
+              required
+            />
+
+            <span class="toggle-eye" id="togglePassword">  <img id="pass-toggle" src="../../assets/images/password-toggle.svg" alt="toggle password visibility" /></span>
+             
+            </span>
+          </div>
+          <span class="warning-alert" id="warning"></span>
+
+          <button type="submit" class="login-button">login</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Load newLogin as module (it will import everything needed) -->
+    <script type="module" src="../js/pages/login/index.js"></script>
+  </body>
+</html>
